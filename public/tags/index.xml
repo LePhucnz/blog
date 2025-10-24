@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Blog của Phúc</title>
+    <link>https://lephucnz.github.io/blog/tags/</link>
+    <description>Recent content in Tags on Blog của Phúc</description>
+    <generator>Hugo -- 0.152.1</generator>
+    <language>vi</language>
+    <lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://lephucnz.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Backend</title>
+      <link>https://lephucnz.github.io/blog/tags/backend/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/backend/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bảo Mật</title>
+      <link>https://lephucnz.github.io/blog/tags/b%E1%BA%A3o-m%E1%BA%ADt/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/b%E1%BA%A3o-m%E1%BA%ADt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Client-Server</title>
+      <link>https://lephucnz.github.io/blog/tags/client-server/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/client-server/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Công Nghệ Phần Mềm</title>
+      <link>https://lephucnz.github.io/blog/tags/c%C3%B4ng-ngh%E1%BB%87-ph%E1%BA%A7n-m%E1%BB%81m/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/c%C3%B4ng-ngh%E1%BB%87-ph%E1%BA%A7n-m%E1%BB%81m/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Express</title>
+      <link>https://lephucnz.github.io/blog/tags/express/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/express/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Frontend</title>
+      <link>https://lephucnz.github.io/blog/tags/frontend/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/frontend/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HTTP</title>
+      <link>https://lephucnz.github.io/blog/tags/http/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/http/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HttpURLConnection</title>
+      <link>https://lephucnz.github.io/blog/tags/httpurlconnection/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/httpurlconnection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>https://lephucnz.github.io/blog/tags/java/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JavaScript</title>
+      <link>https://lephucnz.github.io/blog/tags/javascript/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JWT</title>
+      <link>https://lephucnz.github.io/blog/tags/jwt/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/jwt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lập Trình Hướng Đối Tượng</title>
+      <link>https://lephucnz.github.io/blog/tags/l%E1%BA%ADp-tr%C3%ACnh-h%C6%B0%E1%BB%9Bng-%C4%91%E1%BB%91i-t%C6%B0%E1%BB%A3ng/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/l%E1%BA%ADp-tr%C3%ACnh-h%C6%B0%E1%BB%9Bng-%C4%91%E1%BB%91i-t%C6%B0%E1%BB%A3ng/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lập Trình Mạng</title>
+      <link>https://lephucnz.github.io/blog/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Node.js</title>
+      <link>https://lephucnz.github.io/blog/tags/node.js/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/node.js/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>React</title>
+      <link>https://lephucnz.github.io/blog/tags/react/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/react/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Realtime</title>
+      <link>https://lephucnz.github.io/blog/tags/realtime/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/realtime/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>REST API</title>
+      <link>https://lephucnz.github.io/blog/tags/rest-api/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/rest-api/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Socket</title>
+      <link>https://lephucnz.github.io/blog/tags/socket/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/socket/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spring Boot</title>
+      <link>https://lephucnz.github.io/blog/tags/spring-boot/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/spring-boot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>TCP</title>
+      <link>https://lephucnz.github.io/blog/tags/tcp/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/tcp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>UDP</title>
+      <link>https://lephucnz.github.io/blog/tags/udp/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/udp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ứng Dụng Mạng</title>
+      <link>https://lephucnz.github.io/blog/tags/%E1%BB%A9ng-d%E1%BB%A5ng-m%E1%BA%A1ng/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/%E1%BB%A9ng-d%E1%BB%A5ng-m%E1%BA%A1ng/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WebSocket</title>
+      <link>https://lephucnz.github.io/blog/tags/websocket/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/websocket/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Xác Thực</title>
+      <link>https://lephucnz.github.io/blog/tags/x%C3%A1c-th%E1%BB%B1c/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://lephucnz.github.io/blog/tags/x%C3%A1c-th%E1%BB%B1c/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>So sánh TCP và UDP trong lập trình mạng | Blog của Phúc</title>
+<meta name="keywords" content="Java, TCP, UDP, Lập trình mạng, Socket">
+<meta name="description" content="Phân biệt TCP và UDP, hai giao thức truyền tải phổ biến trong lập trình mạng, kèm ví dụ minh họa bằng Java.">
+<meta name="author" content="Lê Mai Hoàng Phúc">
+<link rel="canonical" href="https://lephucnz.github.io/blog/posts/new5/">
+
+<link href="/blog/assets/css/stylesheet.css" rel="stylesheet">
+<link rel="icon" href="https://lephucnz.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://lephucnz.github.io/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://lephucnz.github.io/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://lephucnz.github.io/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://lephucnz.github.io/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://lephucnz.github.io/blog/posts/new5/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://lephucnz.github.io/blog/posts/new5/">
+  <meta property="og:site_name" content="Blog của Phúc">
+  <meta property="og:title" content="So sánh TCP và UDP trong lập trình mạng">
+  <meta property="og:description" content="Phân biệt TCP và UDP, hai giao thức truyền tải phổ biến trong lập trình mạng, kèm ví dụ minh họa bằng Java.">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-24T00:00:00+00:00">
+    <meta property="article:tag" content="Java">
+    <meta property="article:tag" content="TCP">
+    <meta property="article:tag" content="UDP">
+    <meta property="article:tag" content="Lập Trình Mạng">
+    <meta property="article:tag" content="Socket">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="So sánh TCP và UDP trong lập trình mạng">
+<meta name="twitter:description" content="Phân biệt TCP và UDP, hai giao thức truyền tải phổ biến trong lập trình mạng, kèm ví dụ minh họa bằng Java.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://lephucnz.github.io/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "So sánh TCP và UDP trong lập trình mạng",
+      "item": "https://lephucnz.github.io/blog/posts/new5/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "So sánh TCP và UDP trong lập trình mạng",
+  "name": "So sánh TCP và UDP trong lập trình mạng",
+  "description": "Phân biệt TCP và UDP, hai giao thức truyền tải phổ biến trong lập trình mạng, kèm ví dụ minh họa bằng Java.",
+  "keywords": [
+    "Java", "TCP", "UDP", "Lập trình mạng", "Socket"
+  ],
+  "articleBody": "🌐 Giới thiệu Trong lập trình mạng, hai giao thức phổ biến nhất để truyền dữ liệu là TCP (Transmission Control Protocol) và UDP (User Datagram Protocol). Mỗi giao thức có đặc điểm riêng, phù hợp với từng loại ứng dụng khác nhau.\nBài viết này sẽ giúp em hiểu rõ sự khác biệt giữa TCP và UDP, cách sử dụng chúng trong Java, và khi nào nên chọn giao thức nào.\n🔍 So sánh TCP và UDP Tiêu chí TCP UDP Kiểu kết nối Có kết nối (connection-oriented) Không kết nối (connectionless) Đảm bảo dữ liệu Có (gửi đúng thứ tự, không mất gói) Không đảm bảo (có thể mất gói, sai thứ tự) Tốc độ truyền Chậm hơn do kiểm tra lỗi và xác nhận Nhanh hơn vì không kiểm tra lỗi Ứng dụng phổ biến Web, Email, FTP, Chat Video streaming, game online, VoIP Mức độ tin cậy Cao Thấp 🧪 Ví dụ: TCP và UDP trong Java 🔹 TCP Server import java.io.*; import java.net.*; public class TCPServer { public static void main(String[] args) throws IOException { ServerSocket serverSocket = new ServerSocket(1234); System.out.println(\"TCP Server đang chạy...\"); Socket socket = serverSocket.accept(); BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); PrintWriter out = new PrintWriter(socket.getOutputStream(), true); String message = in.readLine(); System.out.println(\"Client gửi: \" + message); out.println(\"Server nhận: \" + message); socket.close(); serverSocket.close(); } } 🔹 TCP Client import java.io.*; import java.net.*; public class TCPClient { public static void main(String[] args) throws IOException { Socket socket = new Socket(\"localhost\", 1234); PrintWriter out = new PrintWriter(socket.getOutputStream(), true); BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); out.println(\"Xin chào TCP Server!\"); System.out.println(\"Phản hồi từ server: \" + in.readLine()); socket.close(); } } 🔹 UDP Server import java.net.*; public class UDPServer { public static void main(String[] args) throws Exception { DatagramSocket socket = new DatagramSocket(1234); byte[] buffer = new byte[1024]; DatagramPacket packet = new DatagramPacket(buffer, buffer.length); System.out.println(\"UDP Server đang chạy...\"); socket.receive(packet); String message = new String(packet.getData(), 0, packet.getLength()); System.out.println(\"Client gửi: \" + message); String response = \"Server nhận: \" + message; byte[] responseData = response.getBytes(); DatagramPacket responsePacket = new DatagramPacket( responseData, responseData.length, packet.getAddress(), packet.getPort() ); socket.send(responsePacket); socket.close(); } } 🔹 UDP Client import java.net.*; public class UDPClient { public static void main(String[] args) throws Exception { DatagramSocket socket = new DatagramSocket(); byte[] data = \"Xin chào UDP Server!\".getBytes(); InetAddress address = InetAddress.getByName(\"localhost\"); DatagramPacket packet = new DatagramPacket(data, data.length, address, 1234); socket.send(packet); byte[] buffer = new byte[1024]; DatagramPacket response = new DatagramPacket(buffer, buffer.length); socket.receive(response); String reply = new String(response.getData(), 0, response.getLength()); System.out.println(\"Phản hồi từ server: \" + reply); socket.close(); } } 📌 Kết luận TCP phù hợp với các ứng dụng cần độ tin cậy cao như chat, email, truyền file. UDP phù hợp với các ứng dụng cần tốc độ cao, chấp nhận mất dữ liệu như video, game, truyền âm thanh. Việc hiểu rõ sự khác biệt giữa TCP và UDP sẽ giúp em chọn đúng giao thức cho từng loại ứng dụng mạng, từ đó tối ưu hiệu năng và trải nghiệm người dùng.\n",
+  "wordCount" : "497",
+  "inLanguage": "en",
+  "datePublished": "2025-10-24T00:00:00Z",
+  "dateModified": "2025-10-24T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Lê Mai Hoàng Phúc"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lephucnz.github.io/blog/posts/new5/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Blog của Phúc",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lephucnz.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://lephucnz.github.io/blog/" accesskey="h" title="Blog của Phúc (Alt + H)">Blog của Phúc</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://lephucnz.github.io/blog/" title="🏠 Trang chủ">
+                    <span>🏠 Trang chủ</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lephucnz.github.io/blog/about/" title="👨‍💻 Giới thiệu">
+                    <span>👨‍💻 Giới thiệu</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lephucnz.github.io/blog/posts/" title="📰 Blog">
+                    <span>📰 Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lephucnz.github.io/blog/search/" title="🔍 Tìm kiếm">
+                    <span>🔍 Tìm kiếm</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://lephucnz.github.io/blog/">Home</a>&nbsp;»&nbsp;<a href="https://lephucnz.github.io/blog/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      So sánh TCP và UDP trong lập trình mạng
+    </h1>
+    <div class="post-description">
+      Phân biệt TCP và UDP, hai giao thức truyền tải phổ biến trong lập trình mạng, kèm ví dụ minh họa bằng Java.
+    </div>
+    <div class="post-meta"><span title='2025-10-24 00:00:00 +0000 UTC'>October 24, 2025</span>&nbsp;·&nbsp;<span>497 words</span>&nbsp;·&nbsp;<span>Lê Mai Hoàng Phúc</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="-giới-thiệu">🌐 Giới thiệu<a hidden class="anchor" aria-hidden="true" href="#-giới-thiệu">#</a></h2>
+<p>Trong lập trình mạng, hai giao thức phổ biến nhất để truyền dữ liệu là <strong>TCP (Transmission Control Protocol)</strong> và <strong>UDP (User Datagram Protocol)</strong>. Mỗi giao thức có đặc điểm riêng, phù hợp với từng loại ứng dụng khác nhau.</p>
+<p>Bài viết này sẽ giúp em hiểu rõ sự khác biệt giữa TCP và UDP, cách sử dụng chúng trong Java, và khi nào nên chọn giao thức nào.</p>
+<hr>
+<h2 id="-so-sánh-tcp-và-udp">🔍 So sánh TCP và UDP<a hidden class="anchor" aria-hidden="true" href="#-so-sánh-tcp-và-udp">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Tiêu chí</th>
+          <th>TCP</th>
+          <th>UDP</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Kiểu kết nối</td>
+          <td>Có kết nối (connection-oriented)</td>
+          <td>Không kết nối (connectionless)</td>
+      </tr>
+      <tr>
+          <td>Đảm bảo dữ liệu</td>
+          <td>Có (gửi đúng thứ tự, không mất gói)</td>
+          <td>Không đảm bảo (có thể mất gói, sai thứ tự)</td>
+      </tr>
+      <tr>
+          <td>Tốc độ truyền</td>
+          <td>Chậm hơn do kiểm tra lỗi và xác nhận</td>
+          <td>Nhanh hơn vì không kiểm tra lỗi</td>
+      </tr>
+      <tr>
+          <td>Ứng dụng phổ biến</td>
+          <td>Web, Email, FTP, Chat</td>
+          <td>Video streaming, game online, VoIP</td>
+      </tr>
+      <tr>
+          <td>Mức độ tin cậy</td>
+          <td>Cao</td>
+          <td>Thấp</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-ví-dụ-tcp-và-udp-trong-java">🧪 Ví dụ: TCP và UDP trong Java<a hidden class="anchor" aria-hidden="true" href="#-ví-dụ-tcp-và-udp-trong-java">#</a></h2>
+<h3 id="-tcp-server">🔹 TCP Server<a hidden class="anchor" aria-hidden="true" href="#-tcp-server">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.*;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.*;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TCPServer</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) <span style="color:#66d9ef">throws</span> IOException {
+</span></span><span style="display:flex;"><span>        ServerSocket serverSocket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ServerSocket(1234);
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;TCP Server đang chạy...&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Socket socket <span style="color:#f92672">=</span> serverSocket.<span style="color:#a6e22e">accept</span>();
+</span></span><span style="display:flex;"><span>        BufferedReader in <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader(<span style="color:#66d9ef">new</span> InputStreamReader(socket.<span style="color:#a6e22e">getInputStream</span>()));
+</span></span><span style="display:flex;"><span>        PrintWriter out <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PrintWriter(socket.<span style="color:#a6e22e">getOutputStream</span>(), <span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        String message <span style="color:#f92672">=</span> in.<span style="color:#a6e22e">readLine</span>();
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Client gửi: &#34;</span> <span style="color:#f92672">+</span> message);
+</span></span><span style="display:flex;"><span>        out.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Server nhận: &#34;</span> <span style="color:#f92672">+</span> message);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        socket.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>        serverSocket.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="-tcp-client">🔹 TCP Client<a hidden class="anchor" aria-hidden="true" href="#-tcp-client">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.*;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.*;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TCPClient</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) <span style="color:#66d9ef">throws</span> IOException {
+</span></span><span style="display:flex;"><span>        Socket socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Socket(<span style="color:#e6db74">&#34;localhost&#34;</span>, 1234);
+</span></span><span style="display:flex;"><span>        PrintWriter out <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PrintWriter(socket.<span style="color:#a6e22e">getOutputStream</span>(), <span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>        BufferedReader in <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader(<span style="color:#66d9ef">new</span> InputStreamReader(socket.<span style="color:#a6e22e">getInputStream</span>()));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        out.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Xin chào TCP Server!&#34;</span>);
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Phản hồi từ server: &#34;</span> <span style="color:#f92672">+</span> in.<span style="color:#a6e22e">readLine</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        socket.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="-udp-server">🔹 UDP Server<a hidden class="anchor" aria-hidden="true" href="#-udp-server">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.*;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UDPServer</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>        DatagramSocket socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DatagramSocket(1234);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> buffer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span>1024<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        DatagramPacket packet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DatagramPacket(buffer, buffer.<span style="color:#a6e22e">length</span>);
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;UDP Server đang chạy...&#34;</span>);
+</span></span><span style="display:flex;"><span>        socket.<span style="color:#a6e22e">receive</span>(packet);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        String message <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(packet.<span style="color:#a6e22e">getData</span>(), 0, packet.<span style="color:#a6e22e">getLength</span>());
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Client gửi: &#34;</span> <span style="color:#f92672">+</span> message);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        String response <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Server nhận: &#34;</span> <span style="color:#f92672">+</span> message;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> responseData <span style="color:#f92672">=</span> response.<span style="color:#a6e22e">getBytes</span>();
+</span></span><span style="display:flex;"><span>        DatagramPacket responsePacket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DatagramPacket(
+</span></span><span style="display:flex;"><span>            responseData, responseData.<span style="color:#a6e22e">length</span>, packet.<span style="color:#a6e22e">getAddress</span>(), packet.<span style="color:#a6e22e">getPort</span>()
+</span></span><span style="display:flex;"><span>        );
+</span></span><span style="display:flex;"><span>        socket.<span style="color:#a6e22e">send</span>(responsePacket);
+</span></span><span style="display:flex;"><span>        socket.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="-udp-client">🔹 UDP Client<a hidden class="anchor" aria-hidden="true" href="#-udp-client">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.*;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UDPClient</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>        DatagramSocket socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DatagramSocket();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> data <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Xin chào UDP Server!&#34;</span>.<span style="color:#a6e22e">getBytes</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        InetAddress address <span style="color:#f92672">=</span> InetAddress.<span style="color:#a6e22e">getByName</span>(<span style="color:#e6db74">&#34;localhost&#34;</span>);
+</span></span><span style="display:flex;"><span>        DatagramPacket packet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DatagramPacket(data, data.<span style="color:#a6e22e">length</span>, address, 1234);
+</span></span><span style="display:flex;"><span>        socket.<span style="color:#a6e22e">send</span>(packet);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> buffer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span>1024<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>        DatagramPacket response <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DatagramPacket(buffer, buffer.<span style="color:#a6e22e">length</span>);
+</span></span><span style="display:flex;"><span>        socket.<span style="color:#a6e22e">receive</span>(response);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        String reply <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(response.<span style="color:#a6e22e">getData</span>(), 0, response.<span style="color:#a6e22e">getLength</span>());
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Phản hồi từ server: &#34;</span> <span style="color:#f92672">+</span> reply);
+</span></span><span style="display:flex;"><span>        socket.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h2 id="-kết-luận">📌 Kết luận<a hidden class="anchor" aria-hidden="true" href="#-kết-luận">#</a></h2>
+<ul>
+<li><strong>TCP</strong> phù hợp với các ứng dụng cần độ tin cậy cao như chat, email, truyền file.</li>
+<li><strong>UDP</strong> phù hợp với các ứng dụng cần tốc độ cao, chấp nhận mất dữ liệu như video, game, truyền âm thanh.</li>
+</ul>
+<p>Việc hiểu rõ sự khác biệt giữa TCP và UDP sẽ giúp em chọn đúng giao thức cho từng loại ứng dụng mạng, từ đó tối ưu hiệu năng và trải nghiệm người dùng.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://lephucnz.github.io/blog/tags/java/">Java</a></li>
+      <li><a href="https://lephucnz.github.io/blog/tags/tcp/">TCP</a></li>
+      <li><a href="https://lephucnz.github.io/blog/tags/udp/">UDP</a></li>
+      <li><a href="https://lephucnz.github.io/blog/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/">Lập Trình Mạng</a></li>
+      <li><a href="https://lephucnz.github.io/blog/tags/socket/">Socket</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://lephucnz.github.io/blog/posts/new3/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>REST API là gì? Cách xây dựng với Spring Boot</span>
+  </a>
+  <a class="next" href="https://lephucnz.github.io/blog/posts/new9/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Tạo API đơn giản bằng Node.js và Express</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://lephucnz.github.io/blog/">Blog của Phúc</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
