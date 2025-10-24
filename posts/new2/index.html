@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Tạo ứng dụng chat đơn giản bằng Java Socket | My New Hugo Site</title>
 <meta name="keywords" content="Java, Socket, Ứng dụng mạng, Client-Server">
 <meta name="description" content="Hướng dẫn xây dựng ứng dụng chat cơ bản giữa client và server bằng Java Socket, giúp hiểu rõ cách giao tiếp qua giao thức TCP.">
 <meta name="author" content="Lê Mai Hoàng Phúc">
-<link rel="canonical" href="http://localhost:1313/posts/new2/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.a482bf00fa5c046040ef7973ad5fdf5657890cacb596c93f1382f664ca542074.css" integrity="sha256-pIK/APpcBGBA73lzrV/fVleJDKy1lsk/E4L2ZMpUIHQ=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="canonical" href="https://lephuctron.github.io/Blog/huagu/posts/new2/">
+<link crossorigin="anonymous" href="/Blog/huagu/assets/css/stylesheet.a482bf00fa5c046040ef7973ad5fdf5657890cacb596c93f1382f664ca542074.css" integrity="sha256-pIK/APpcBGBA73lzrV/fVleJDKy1lsk/E4L2ZMpUIHQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://lephuctron.github.io/Blog/huagu/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://lephuctron.github.io/Blog/huagu/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://lephuctron.github.io/Blog/huagu/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://lephuctron.github.io/Blog/huagu/apple-touch-icon.png">
+<link rel="mask-icon" href="https://lephuctron.github.io/Blog/huagu/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/new2/">
+<link rel="alternate" hreflang="en" href="https://lephuctron.github.io/Blog/huagu/posts/new2/">
 <noscript>
     <style>
         #theme-toggle,
@@ -55,7 +55,77 @@
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:url" content="https://lephuctron.github.io/Blog/huagu/posts/new2/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="Tạo ứng dụng chat đơn giản bằng Java Socket">
+  <meta property="og:description" content="Hướng dẫn xây dựng ứng dụng chat cơ bản giữa client và server bằng Java Socket, giúp hiểu rõ cách giao tiếp qua giao thức TCP.">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-24T00:00:00+00:00">
+    <meta property="article:tag" content="Java">
+    <meta property="article:tag" content="Socket">
+    <meta property="article:tag" content="Ứng Dụng Mạng">
+    <meta property="article:tag" content="Client-Server">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tạo ứng dụng chat đơn giản bằng Java Socket">
+<meta name="twitter:description" content="Hướng dẫn xây dựng ứng dụng chat cơ bản giữa client và server bằng Java Socket, giúp hiểu rõ cách giao tiếp qua giao thức TCP.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://lephuctron.github.io/Blog/huagu/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Tạo ứng dụng chat đơn giản bằng Java Socket",
+      "item": "https://lephuctron.github.io/Blog/huagu/posts/new2/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Tạo ứng dụng chat đơn giản bằng Java Socket",
+  "name": "Tạo ứng dụng chat đơn giản bằng Java Socket",
+  "description": "Hướng dẫn xây dựng ứng dụng chat cơ bản giữa client và server bằng Java Socket, giúp hiểu rõ cách giao tiếp qua giao thức TCP.",
+  "keywords": [
+    "Java", "Socket", "Ứng dụng mạng", "Client-Server"
+  ],
+  "articleBody": "💬 Mục tiêu bài viết Trong bài viết này, chúng ta sẽ cùng nhau xây dựng một ứng dụng chat đơn giản giữa client và server sử dụng Java Socket.\nĐây là ví dụ điển hình giúp hiểu rõ cách giao tiếp giữa hai máy thông qua giao thức TCP — nền tảng của lập trình mạng.\nỨng dụng này sẽ giúp em:\nHiểu cách thiết lập kết nối giữa hai máy Biết cách truyền dữ liệu qua luồng đầu vào/ra Làm quen với mô hình client-server trong thực tế 🧩 Kiến thức cần nắm Trước khi bắt đầu, em cần nắm một số khái niệm cơ bản:\nSocket: Điểm cuối của kết nối mạng. Trong Java, Socket đại diện cho kết nối giữa client và server. ServerSocket: Lớp dùng để tạo server, lắng nghe và chấp nhận kết nối từ client. InputStream / OutputStream: Luồng dữ liệu dùng để đọc và ghi thông tin giữa hai bên. 🖥️ Cấu trúc ứng dụng Ứng dụng gồm 2 phần chính:\nServer.java – Chạy trước, lắng nghe kết nối từ client, nhận và phản hồi tin nhắn. Client.java – Kết nối đến server, gửi tin nhắn và nhận phản hồi. Mô hình này mô phỏng cách hoạt động của các ứng dụng chat như Messenger, Zalo, hoặc các hệ thống giao tiếp nội bộ.\n🔧 Mã nguồn ứng dụng 🔹 Server.java – Máy chủ import java.io.*; import java.net.*; public class Server { public static void main(String[] args) throws IOException { ServerSocket serverSocket = new ServerSocket(1234); System.out.println(\"Server đang chạy và lắng nghe kết nối...\"); Socket clientSocket = serverSocket.accept(); System.out.println(\"Client đã kết nối!\"); BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream())); PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true); String message; while ((message = in.readLine()) != null) { System.out.println(\"Client: \" + message); out.println(\"Server nhận: \" + message); } serverSocket.close(); } } 🔹 Client.java – Máy khách import java.io.*; import java.net.*; public class Client { public static void main(String[] args) throws IOException { Socket socket = new Socket(\"localhost\", 1234); System.out.println(\"Đã kết nối đến server!\"); BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); PrintWriter out = new PrintWriter(socket.getOutputStream(), true); BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in)); String input; while ((input = userInput.readLine()) != null) { out.println(input); System.out.println(\"Phản hồi từ server: \" + in.readLine()); } socket.close(); } } 🧪 Cách chạy ứng dụng 1️⃣ Biên dịch cả hai file: javac Server.java javac Client.java 2️⃣ Chạy server trước: java Server 3️⃣ Mở cửa sổ terminal khác và chạy client: java Client Sau đó, nhập tin nhắn từ client và xem phản hồi từ server.\n📦 Mở rộng ứng dụng Sau khi hoàn thành phiên bản cơ bản, em có thể nâng cấp ứng dụng theo các hướng sau:\nCho phép nhiều client kết nối cùng lúc (dùng Thread hoặc ExecutorService) Thêm giao diện đồ họa bằng JavaFX hoặc Swing Lưu lịch sử chat vào file hoặc cơ sở dữ liệu Mã hóa dữ liệu để tăng bảo mật (sử dụng AES hoặc SSL Socket) Tạo phòng chat nhóm hoặc chat riêng tư 📌 Kết luận Ứng dụng chat đơn giản bằng Java Socket là một ví dụ thực tế giúp em hiểu rõ cách giao tiếp giữa hai máy qua mạng.\nĐây là nền tảng để xây dựng các hệ thống phức tạp hơn như:\nChat đa người dùng Truyền file Dịch vụ mạng nội bộ Việc nắm vững lập trình Socket sẽ giúp em tiến xa hơn trong các lĩnh vực như:\nPhát triển ứng dụng mạng Lập trình hệ thống phân tán Xây dựng backend cho ứng dụng thời gian thực ",
+  "wordCount" : "588",
+  "inLanguage": "en",
+  "datePublished": "2025-10-24T00:00:00Z",
+  "dateModified": "2025-10-24T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Lê Mai Hoàng Phúc"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lephuctron.github.io/Blog/huagu/posts/new2/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My New Hugo Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lephuctron.github.io/Blog/huagu/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -73,7 +143,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
+            <a href="https://lephuctron.github.io/Blog/huagu/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -99,17 +169,17 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/" title="🏠 Trang chủ">
+                <a href="https://lephuctron.github.io/Blog/huagu/" title="🏠 Trang chủ">
                     <span>🏠 Trang chủ</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/about/" title="👨‍💻 Giới thiệu">
+                <a href="https://lephuctron.github.io/Blog/huagu/about/" title="👨‍💻 Giới thiệu">
                     <span>👨‍💻 Giới thiệu</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/posts/" title="📰 Blog">
+                <a href="https://lephuctron.github.io/Blog/huagu/posts/" title="📰 Blog">
                     <span>📰 Blog</span>
                 </a>
             </li>
@@ -245,17 +315,17 @@ javac Client.java
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/java/">Java</a></li>
-      <li><a href="http://localhost:1313/tags/socket/">Socket</a></li>
-      <li><a href="http://localhost:1313/tags/%E1%BB%A9ng-d%E1%BB%A5ng-m%E1%BA%A1ng/">Ứng Dụng Mạng</a></li>
-      <li><a href="http://localhost:1313/tags/client-server/">Client-Server</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/java/">Java</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/socket/">Socket</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/%E1%BB%A9ng-d%E1%BB%A5ng-m%E1%BA%A1ng/">Ứng Dụng Mạng</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/client-server/">Client-Server</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">My New Hugo Site</a></span> · 
+        <span>&copy; 2025 <a href="https://lephuctron.github.io/Blog/huagu/">My New Hugo Site</a></span> · 
 
     <span>
         Powered by

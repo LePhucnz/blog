@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>So sánh TCP và UDP trong lập trình mạng | My New Hugo Site</title>
 <meta name="keywords" content="Java, TCP, UDP, Lập trình mạng, Socket">
 <meta name="description" content="Phân biệt TCP và UDP, hai giao thức truyền tải phổ biến trong lập trình mạng, kèm ví dụ minh họa bằng Java.">
 <meta name="author" content="Lê Mai Hoàng Phúc">
-<link rel="canonical" href="http://localhost:1313/posts/new5/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.a482bf00fa5c046040ef7973ad5fdf5657890cacb596c93f1382f664ca542074.css" integrity="sha256-pIK/APpcBGBA73lzrV/fVleJDKy1lsk/E4L2ZMpUIHQ=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="canonical" href="https://lephuctron.github.io/Blog/huagu/posts/new5/">
+<link crossorigin="anonymous" href="/Blog/huagu/assets/css/stylesheet.a482bf00fa5c046040ef7973ad5fdf5657890cacb596c93f1382f664ca542074.css" integrity="sha256-pIK/APpcBGBA73lzrV/fVleJDKy1lsk/E4L2ZMpUIHQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://lephuctron.github.io/Blog/huagu/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://lephuctron.github.io/Blog/huagu/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://lephuctron.github.io/Blog/huagu/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://lephuctron.github.io/Blog/huagu/apple-touch-icon.png">
+<link rel="mask-icon" href="https://lephuctron.github.io/Blog/huagu/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/new5/">
+<link rel="alternate" hreflang="en" href="https://lephuctron.github.io/Blog/huagu/posts/new5/">
 <noscript>
     <style>
         #theme-toggle,
@@ -55,7 +55,78 @@
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:url" content="https://lephuctron.github.io/Blog/huagu/posts/new5/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="So sánh TCP và UDP trong lập trình mạng">
+  <meta property="og:description" content="Phân biệt TCP và UDP, hai giao thức truyền tải phổ biến trong lập trình mạng, kèm ví dụ minh họa bằng Java.">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-24T00:00:00+00:00">
+    <meta property="article:tag" content="Java">
+    <meta property="article:tag" content="TCP">
+    <meta property="article:tag" content="UDP">
+    <meta property="article:tag" content="Lập Trình Mạng">
+    <meta property="article:tag" content="Socket">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="So sánh TCP và UDP trong lập trình mạng">
+<meta name="twitter:description" content="Phân biệt TCP và UDP, hai giao thức truyền tải phổ biến trong lập trình mạng, kèm ví dụ minh họa bằng Java.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://lephuctron.github.io/Blog/huagu/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "So sánh TCP và UDP trong lập trình mạng",
+      "item": "https://lephuctron.github.io/Blog/huagu/posts/new5/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "So sánh TCP và UDP trong lập trình mạng",
+  "name": "So sánh TCP và UDP trong lập trình mạng",
+  "description": "Phân biệt TCP và UDP, hai giao thức truyền tải phổ biến trong lập trình mạng, kèm ví dụ minh họa bằng Java.",
+  "keywords": [
+    "Java", "TCP", "UDP", "Lập trình mạng", "Socket"
+  ],
+  "articleBody": "🌐 Giới thiệu Trong lập trình mạng, hai giao thức phổ biến nhất để truyền dữ liệu là TCP (Transmission Control Protocol) và UDP (User Datagram Protocol). Mỗi giao thức có đặc điểm riêng, phù hợp với từng loại ứng dụng khác nhau.\nBài viết này sẽ giúp em hiểu rõ sự khác biệt giữa TCP và UDP, cách sử dụng chúng trong Java, và khi nào nên chọn giao thức nào.\n🔍 So sánh TCP và UDP Tiêu chí TCP UDP Kiểu kết nối Có kết nối (connection-oriented) Không kết nối (connectionless) Đảm bảo dữ liệu Có (gửi đúng thứ tự, không mất gói) Không đảm bảo (có thể mất gói, sai thứ tự) Tốc độ truyền Chậm hơn do kiểm tra lỗi và xác nhận Nhanh hơn vì không kiểm tra lỗi Ứng dụng phổ biến Web, Email, FTP, Chat Video streaming, game online, VoIP Mức độ tin cậy Cao Thấp 🧪 Ví dụ: TCP và UDP trong Java 🔹 TCP Server import java.io.*; import java.net.*; public class TCPServer { public static void main(String[] args) throws IOException { ServerSocket serverSocket = new ServerSocket(1234); System.out.println(\"TCP Server đang chạy...\"); Socket socket = serverSocket.accept(); BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); PrintWriter out = new PrintWriter(socket.getOutputStream(), true); String message = in.readLine(); System.out.println(\"Client gửi: \" + message); out.println(\"Server nhận: \" + message); socket.close(); serverSocket.close(); } } 🔹 TCP Client import java.io.*; import java.net.*; public class TCPClient { public static void main(String[] args) throws IOException { Socket socket = new Socket(\"localhost\", 1234); PrintWriter out = new PrintWriter(socket.getOutputStream(), true); BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); out.println(\"Xin chào TCP Server!\"); System.out.println(\"Phản hồi từ server: \" + in.readLine()); socket.close(); } } 🔹 UDP Server import java.net.*; public class UDPServer { public static void main(String[] args) throws Exception { DatagramSocket socket = new DatagramSocket(1234); byte[] buffer = new byte[1024]; DatagramPacket packet = new DatagramPacket(buffer, buffer.length); System.out.println(\"UDP Server đang chạy...\"); socket.receive(packet); String message = new String(packet.getData(), 0, packet.getLength()); System.out.println(\"Client gửi: \" + message); String response = \"Server nhận: \" + message; byte[] responseData = response.getBytes(); DatagramPacket responsePacket = new DatagramPacket( responseData, responseData.length, packet.getAddress(), packet.getPort() ); socket.send(responsePacket); socket.close(); } } 🔹 UDP Client import java.net.*; public class UDPClient { public static void main(String[] args) throws Exception { DatagramSocket socket = new DatagramSocket(); byte[] data = \"Xin chào UDP Server!\".getBytes(); InetAddress address = InetAddress.getByName(\"localhost\"); DatagramPacket packet = new DatagramPacket(data, data.length, address, 1234); socket.send(packet); byte[] buffer = new byte[1024]; DatagramPacket response = new DatagramPacket(buffer, buffer.length); socket.receive(response); String reply = new String(response.getData(), 0, response.getLength()); System.out.println(\"Phản hồi từ server: \" + reply); socket.close(); } } 📌 Kết luận TCP phù hợp với các ứng dụng cần độ tin cậy cao như chat, email, truyền file. UDP phù hợp với các ứng dụng cần tốc độ cao, chấp nhận mất dữ liệu như video, game, truyền âm thanh. Việc hiểu rõ sự khác biệt giữa TCP và UDP sẽ giúp em chọn đúng giao thức cho từng loại ứng dụng mạng, từ đó tối ưu hiệu năng và trải nghiệm người dùng.\n",
+  "wordCount" : "497",
+  "inLanguage": "en",
+  "datePublished": "2025-10-24T00:00:00Z",
+  "dateModified": "2025-10-24T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Lê Mai Hoàng Phúc"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lephuctron.github.io/Blog/huagu/posts/new5/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My New Hugo Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lephuctron.github.io/Blog/huagu/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -73,7 +144,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
+            <a href="https://lephuctron.github.io/Blog/huagu/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -99,17 +170,17 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/" title="🏠 Trang chủ">
+                <a href="https://lephuctron.github.io/Blog/huagu/" title="🏠 Trang chủ">
                     <span>🏠 Trang chủ</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/about/" title="👨‍💻 Giới thiệu">
+                <a href="https://lephuctron.github.io/Blog/huagu/about/" title="👨‍💻 Giới thiệu">
                     <span>👨‍💻 Giới thiệu</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/posts/" title="📰 Blog">
+                <a href="https://lephuctron.github.io/Blog/huagu/posts/" title="📰 Blog">
                     <span>📰 Blog</span>
                 </a>
             </li>
@@ -269,18 +340,18 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/java/">Java</a></li>
-      <li><a href="http://localhost:1313/tags/tcp/">TCP</a></li>
-      <li><a href="http://localhost:1313/tags/udp/">UDP</a></li>
-      <li><a href="http://localhost:1313/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/">Lập Trình Mạng</a></li>
-      <li><a href="http://localhost:1313/tags/socket/">Socket</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/java/">Java</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/tcp/">TCP</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/udp/">UDP</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/">Lập Trình Mạng</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/socket/">Socket</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">My New Hugo Site</a></span> · 
+        <span>&copy; 2025 <a href="https://lephuctron.github.io/Blog/huagu/">My New Hugo Site</a></span> · 
 
     <span>
         Powered by

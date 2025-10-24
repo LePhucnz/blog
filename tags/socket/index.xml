@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Socket on My New Hugo Site</title>
-    <link>http://localhost:1313/tags/socket/</link>
+    <link>https://lephuctron.github.io/Blog/huagu/tags/socket/</link>
     <description>Recent content in Socket on My New Hugo Site</description>
     <generator>Hugo -- 0.152.1</generator>
     <language>vi</language>
     <lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/socket/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lephuctron.github.io/Blog/huagu/tags/socket/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>So sánh TCP và UDP trong lập trình mạng</title>
-      <link>http://localhost:1313/posts/new5/</link>
+      <link>https://lephuctron.github.io/Blog/huagu/posts/new5/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/new5/</guid>
+      <guid>https://lephuctron.github.io/Blog/huagu/posts/new5/</guid>
       <description>Phân biệt TCP và UDP, hai giao thức truyền tải phổ biến trong lập trình mạng, kèm ví dụ minh họa bằng Java.</description>
     </item>
     <item>
       <title>Tạo ứng dụng chat đơn giản bằng Java Socket</title>
-      <link>http://localhost:1313/posts/new2/</link>
+      <link>https://lephuctron.github.io/Blog/huagu/posts/new2/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/new2/</guid>
+      <guid>https://lephuctron.github.io/Blog/huagu/posts/new2/</guid>
       <description>Hướng dẫn xây dựng ứng dụng chat cơ bản giữa client và server bằng Java Socket, giúp hiểu rõ cách giao tiếp qua giao thức TCP.</description>
     </item>
   </channel>

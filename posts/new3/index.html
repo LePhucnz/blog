@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>REST API là gì? Cách xây dựng với Spring Boot | My New Hugo Site</title>
 <meta name="keywords" content="Java, Spring Boot, REST API, Backend, Lập trình mạng">
 <meta name="description" content="Giới thiệu chi tiết về RESTful API và hướng dẫn từng bước xây dựng API với Spring Boot trong Java.">
 <meta name="author" content="Lê Mai Hoàng Phúc">
-<link rel="canonical" href="http://localhost:1313/posts/new3/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.a482bf00fa5c046040ef7973ad5fdf5657890cacb596c93f1382f664ca542074.css" integrity="sha256-pIK/APpcBGBA73lzrV/fVleJDKy1lsk/E4L2ZMpUIHQ=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="canonical" href="https://lephuctron.github.io/Blog/huagu/posts/new3/">
+<link crossorigin="anonymous" href="/Blog/huagu/assets/css/stylesheet.a482bf00fa5c046040ef7973ad5fdf5657890cacb596c93f1382f664ca542074.css" integrity="sha256-pIK/APpcBGBA73lzrV/fVleJDKy1lsk/E4L2ZMpUIHQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://lephuctron.github.io/Blog/huagu/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://lephuctron.github.io/Blog/huagu/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://lephuctron.github.io/Blog/huagu/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://lephuctron.github.io/Blog/huagu/apple-touch-icon.png">
+<link rel="mask-icon" href="https://lephuctron.github.io/Blog/huagu/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/new3/">
+<link rel="alternate" hreflang="en" href="https://lephuctron.github.io/Blog/huagu/posts/new3/">
 <noscript>
     <style>
         #theme-toggle,
@@ -55,7 +55,78 @@
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:url" content="https://lephuctron.github.io/Blog/huagu/posts/new3/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="REST API là gì? Cách xây dựng với Spring Boot">
+  <meta property="og:description" content="Giới thiệu chi tiết về RESTful API và hướng dẫn từng bước xây dựng API với Spring Boot trong Java.">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-24T00:00:00+00:00">
+    <meta property="article:tag" content="Java">
+    <meta property="article:tag" content="Spring Boot">
+    <meta property="article:tag" content="REST API">
+    <meta property="article:tag" content="Backend">
+    <meta property="article:tag" content="Lập Trình Mạng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="REST API là gì? Cách xây dựng với Spring Boot">
+<meta name="twitter:description" content="Giới thiệu chi tiết về RESTful API và hướng dẫn từng bước xây dựng API với Spring Boot trong Java.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://lephuctron.github.io/Blog/huagu/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "REST API là gì? Cách xây dựng với Spring Boot",
+      "item": "https://lephuctron.github.io/Blog/huagu/posts/new3/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "REST API là gì? Cách xây dựng với Spring Boot",
+  "name": "REST API là gì? Cách xây dựng với Spring Boot",
+  "description": "Giới thiệu chi tiết về RESTful API và hướng dẫn từng bước xây dựng API với Spring Boot trong Java.",
+  "keywords": [
+    "Java", "Spring Boot", "REST API", "Backend", "Lập trình mạng"
+  ],
+  "articleBody": "🌐 REST API là gì? REST API (Representational State Transfer Application Programming Interface) là một kiểu kiến trúc phần mềm giúp các hệ thống giao tiếp với nhau thông qua giao thức HTTP.\nREST API thường được sử dụng để xây dựng các dịch vụ web hiện đại, nơi client (trình duyệt, ứng dụng di động…) có thể gửi yêu cầu đến server để lấy hoặc thay đổi dữ liệu.\n🔑 Đặc điểm chính của REST API: Stateless (Không trạng thái): Mỗi yêu cầu từ client đến server phải chứa đầy đủ thông tin để server xử lý. Sử dụng HTTP: REST tận dụng các phương thức HTTP như GET, POST, PUT, DELETE để thực hiện các thao tác CRUD (Create, Read, Update, Delete). Dữ liệu trả về thường ở định dạng JSON hoặc XML, trong đó JSON phổ biến nhất vì nhẹ và dễ xử lý. Tài nguyên được định danh bằng URL: Ví dụ: /users, /products, /orders 🚀 Tại sao nên dùng Spring Boot để xây REST API? Spring Boot là một framework mạnh mẽ trong hệ sinh thái Java, giúp lập trình viên xây dựng ứng dụng web và dịch vụ backend một cách nhanh chóng – dễ dàng – hiệu quả.\n⚡ Ưu điểm của Spring Boot: ✅ Cấu hình tối giản, khởi tạo nhanh ✅ Tích hợp sẵn các công cụ như Tomcat, Jetty ✅ Hỗ trợ mạnh cho RESTful API qua annotation: @RestController, @RequestMapping, @GetMapping, @PostMapping, … ✅ Dễ dàng tích hợp với JPA, Hibernate, Security, Swagger, v.v. 🧩 Bước 2: Viết Controller đầu tiên Tạo một lớp controller để định nghĩa các endpoint REST API — nơi xử lý yêu cầu từ client.\n📄 HelloController.java package com.example.demo.controllers; import org.springframework.web.bind.annotation.*; @RestController @RequestMapping(\"/hello\") public class HelloController { @GetMapping(\"\") public String sayHello() { return \"Xin chào từ REST API!\"; } @PostMapping(\"\") public String receiveHello(@RequestBody String name) { return \"Chào bạn, \" + name + \"!\"; } } 💠 Bước 3: Cấu hình ứng dụng Đây là lớp khởi động chính của Spring Boot. Khi chạy lớp này, ứng dụng sẽ được khởi tạo, các controller sẽ được quét và server sẽ bắt đầu lắng nghe yêu cầu.\n📄 DemoApplication.java package com.example.demo; import org.springframework.boot.SpringApplication; import org.springframework.boot.autoconfigure.SpringBootApplication; @SpringBootApplication public class DemoApplication { public static void main(String[] args) { SpringApplication.run(DemoApplication.class, args); } } 📝 Giải thích: @SpringBootApplication: Annotation tổng hợp giúp Spring Boot tự động cấu hình. SpringApplication.run(...): Khởi động ứng dụng và mở cổng mặc định (8080). 🧪 Kiểm thử REST API Sau khi chạy ứng dụng bằng lệnh:\nmvn spring-boot:run 🔹 Gửi yêu cầu GET: curl http://localhost:8080/hello ➡️ Kết quả:\nXin chào từ REST API! 🔹 Gửi yêu cầu POST: curl -X POST http://localhost:8080/hello -H \"Content-Type: text/plain\" -d \"Phúc\" ➡️ Kết quả:\nChào bạn, Phúc! 🔧 Mở rộng REST API Sau khi hiểu cách tạo API đơn giản, bạn có thể mở rộng bằng cách:\n🏗️ Thêm các lớp: Model: Biểu diễn dữ liệu (User, Product, Order…) Service: Xử lý logic nghiệp vụ Repository: Kết nối cơ sở dữ liệu (JPA hoặc JDBC) ⚡ Thêm tính năng nâng cao: Phân trang \u0026 lọc dữ liệu Xác thực người dùng (JWT, OAuth2) Quản lý lỗi \u0026 exception Tài liệu API bằng Swagger UI 📌 Kết luận REST API là nền tảng quan trọng trong phát triển phần mềm hiện đại, đặc biệt khi xây dựng ứng dụng web, mobile hoặc hệ thống phân tán.\nViệc sử dụng Spring Boot giúp lập trình viên Java triển khai REST API nhanh, dễ bảo trì và mở rộng.\n🌱 Ứng dụng thực tế Tạo backend cho blog cá nhân Kết nối frontend (React, Angular, Vue) với server Xây dựng hệ thống quản lý người dùng, bài viết, bình luận… Tích hợp với mobile app hoặc hệ thống IoT ",
+  "wordCount" : "627",
+  "inLanguage": "en",
+  "datePublished": "2025-10-24T00:00:00Z",
+  "dateModified": "2025-10-24T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Lê Mai Hoàng Phúc"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lephuctron.github.io/Blog/huagu/posts/new3/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My New Hugo Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lephuctron.github.io/Blog/huagu/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -73,7 +144,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
+            <a href="https://lephuctron.github.io/Blog/huagu/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -99,17 +170,17 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/" title="🏠 Trang chủ">
+                <a href="https://lephuctron.github.io/Blog/huagu/" title="🏠 Trang chủ">
                     <span>🏠 Trang chủ</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/about/" title="👨‍💻 Giới thiệu">
+                <a href="https://lephuctron.github.io/Blog/huagu/about/" title="👨‍💻 Giới thiệu">
                     <span>👨‍💻 Giới thiệu</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/posts/" title="📰 Blog">
+                <a href="https://lephuctron.github.io/Blog/huagu/posts/" title="📰 Blog">
                     <span>📰 Blog</span>
                 </a>
             </li>
@@ -243,18 +314,18 @@ Việc sử dụng <strong>Spring Boot</strong> giúp lập trình viên Java tr
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/java/">Java</a></li>
-      <li><a href="http://localhost:1313/tags/spring-boot/">Spring Boot</a></li>
-      <li><a href="http://localhost:1313/tags/rest-api/">REST API</a></li>
-      <li><a href="http://localhost:1313/tags/backend/">Backend</a></li>
-      <li><a href="http://localhost:1313/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/">Lập Trình Mạng</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/java/">Java</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/spring-boot/">Spring Boot</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/rest-api/">REST API</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/backend/">Backend</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/">Lập Trình Mạng</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">My New Hugo Site</a></span> · 
+        <span>&copy; 2025 <a href="https://lephuctron.github.io/Blog/huagu/">My New Hugo Site</a></span> · 
 
     <span>
         Powered by

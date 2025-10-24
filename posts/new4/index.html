@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>WebSocket trong JavaScript: Giao tiếp thời gian thực | My New Hugo Site</title>
 <meta name="keywords" content="JavaScript, WebSocket, Realtime, Lập trình mạng">
 <meta name="description" content="Tìm hiểu cách sử dụng WebSocket trong JavaScript để xây dựng ứng dụng giao tiếp thời gian thực giữa client và server.">
 <meta name="author" content="Lê Mai Hoàng Phúc">
-<link rel="canonical" href="http://localhost:1313/posts/new4/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.a482bf00fa5c046040ef7973ad5fdf5657890cacb596c93f1382f664ca542074.css" integrity="sha256-pIK/APpcBGBA73lzrV/fVleJDKy1lsk/E4L2ZMpUIHQ=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="canonical" href="https://lephuctron.github.io/Blog/huagu/posts/new4/">
+<link crossorigin="anonymous" href="/Blog/huagu/assets/css/stylesheet.a482bf00fa5c046040ef7973ad5fdf5657890cacb596c93f1382f664ca542074.css" integrity="sha256-pIK/APpcBGBA73lzrV/fVleJDKy1lsk/E4L2ZMpUIHQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://lephuctron.github.io/Blog/huagu/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://lephuctron.github.io/Blog/huagu/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://lephuctron.github.io/Blog/huagu/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://lephuctron.github.io/Blog/huagu/apple-touch-icon.png">
+<link rel="mask-icon" href="https://lephuctron.github.io/Blog/huagu/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/new4/">
+<link rel="alternate" hreflang="en" href="https://lephuctron.github.io/Blog/huagu/posts/new4/">
 <noscript>
     <style>
         #theme-toggle,
@@ -55,7 +55,77 @@
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:url" content="https://lephuctron.github.io/Blog/huagu/posts/new4/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="WebSocket trong JavaScript: Giao tiếp thời gian thực">
+  <meta property="og:description" content="Tìm hiểu cách sử dụng WebSocket trong JavaScript để xây dựng ứng dụng giao tiếp thời gian thực giữa client và server.">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-24T00:00:00+00:00">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="WebSocket">
+    <meta property="article:tag" content="Realtime">
+    <meta property="article:tag" content="Lập Trình Mạng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WebSocket trong JavaScript: Giao tiếp thời gian thực">
+<meta name="twitter:description" content="Tìm hiểu cách sử dụng WebSocket trong JavaScript để xây dựng ứng dụng giao tiếp thời gian thực giữa client và server.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://lephuctron.github.io/Blog/huagu/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "WebSocket trong JavaScript: Giao tiếp thời gian thực",
+      "item": "https://lephuctron.github.io/Blog/huagu/posts/new4/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "WebSocket trong JavaScript: Giao tiếp thời gian thực",
+  "name": "WebSocket trong JavaScript: Giao tiếp thời gian thực",
+  "description": "Tìm hiểu cách sử dụng WebSocket trong JavaScript để xây dựng ứng dụng giao tiếp thời gian thực giữa client và server.",
+  "keywords": [
+    "JavaScript", "WebSocket", "Realtime", "Lập trình mạng"
+  ],
+  "articleBody": "🌐 WebSocket là gì? WebSocket là một giao thức mạng cho phép thiết lập kết nối hai chiều (full-duplex) giữa client và server thông qua một kết nối TCP duy nhất. Khác với HTTP, WebSocket duy trì kết nối liên tục, giúp truyền dữ liệu nhanh chóng mà không cần gửi lại toàn bộ yêu cầu mỗi lần.\n🔄 So sánh WebSocket với HTTP: Tiêu chí HTTP WebSocket Kiểu kết nối Một chiều (client → server) Hai chiều (client ↔ server) Tốc độ phản hồi Chậm hơn do phải gửi lại yêu cầu Nhanh hơn, kết nối liên tục Ứng dụng phổ biến Website tĩnh, API REST Chat, game, thông báo realtime 🎯 Khi nào nên dùng WebSocket? WebSocket rất hữu ích khi em cần:\nGiao tiếp thời gian thực (chat, thông báo, trạng thái người dùng) Cập nhật dữ liệu liên tục mà không cần reload trang Xây dựng game online hoặc hệ thống giám sát trực tiếp 🧪 Ví dụ: Tạo ứng dụng chat đơn giản bằng WebSocket 📁 Cấu trúc dự án websocket-chat/ ├── server.js // File tạo WebSocket server bằng Node.js └── index.html // Giao diện client kết nối và gửi tin nhắn qua WebSocket 🔹 Bước 1: Tạo server WebSocket bằng Node.js server.js\nconst WebSocket = require('ws'); const server = new WebSocket.Server({ port: 8080 }); server.on('connection', socket =\u003e { console.log('Client đã kết nối'); socket.on('message', message =\u003e { console.log('Tin nhắn từ client:', message); socket.send(`Server nhận: ${message}`); }); socket.on('close', () =\u003e { console.log('Client đã ngắt kết nối'); }); }); Để chạy server, bạn cần cài thư viện ws:\nnpm install ws node server.js 🔹 Bước 2: Tạo giao diện client bằng HTML + JavaScript index.html\n\u003c!DOCTYPE html\u003e \u003chtml\u003e \u003chead\u003e \u003ctitle\u003eChat WebSocket\u003c/title\u003e \u003c/head\u003e \u003cbody\u003e \u003ch2\u003eỨng dụng Chat WebSocket\u003c/h2\u003e \u003cinput type=\"text\" id=\"messageInput\" placeholder=\"Nhập tin nhắn...\" /\u003e \u003cbutton onclick=\"sendMessage()\"\u003eGửi\u003c/button\u003e \u003cdiv id=\"chatLog\"\u003e\u003c/div\u003e \u003cscript\u003e const socket = new WebSocket('ws://localhost:8080'); socket.onopen = () =\u003e { console.log('Đã kết nối đến server'); }; socket.onmessage = event =\u003e { const chatLog = document.getElementById('chatLog'); chatLog.innerHTML += `${event.data}\n`; }; function sendMessage() { const input = document.getElementById('messageInput'); socket.send(input.value); input.value = ''; } \u003c/script\u003e \u003c/body\u003e \u003c/html\u003e 🧪 Cách chạy thử Mở terminal, chạy server:\nnode server.js Mở file index.html bằng trình duyệt.\nNhập tin nhắn và nhấn “Gửi” để thấy phản hồi từ server.\n📦 Mở rộng ứng dụng Sau khi hiểu cách hoạt động cơ bản, em có thể nâng cấp ứng dụng:\nCho phép nhiều client kết nối và chat với nhau (broadcast) Thêm giao diện đẹp bằng CSS hoặc framework như Bootstrap Lưu lịch sử chat vào cơ sở dữ liệu Tích hợp xác thực người dùng Dùng WebSocket kết hợp với Express hoặc NestJS 📌 Kết luận WebSocket là công nghệ mạnh mẽ giúp xây dựng các ứng dụng thời gian thực hiệu quả.\nViệc hiểu và sử dụng WebSocket trong JavaScript sẽ giúp em phát triển các hệ thống hiện đại như:\nChat nội bộ công ty Hệ thống thông báo realtime Game đa người chơi Dashboard giám sát trực tiếp ",
+  "wordCount" : "496",
+  "inLanguage": "en",
+  "datePublished": "2025-10-24T00:00:00Z",
+  "dateModified": "2025-10-24T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Lê Mai Hoàng Phúc"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lephuctron.github.io/Blog/huagu/posts/new4/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My New Hugo Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lephuctron.github.io/Blog/huagu/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -73,7 +143,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
+            <a href="https://lephuctron.github.io/Blog/huagu/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -99,17 +169,17 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/" title="🏠 Trang chủ">
+                <a href="https://lephuctron.github.io/Blog/huagu/" title="🏠 Trang chủ">
                     <span>🏠 Trang chủ</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/about/" title="👨‍💻 Giới thiệu">
+                <a href="https://lephuctron.github.io/Blog/huagu/about/" title="👨‍💻 Giới thiệu">
                     <span>👨‍💻 Giới thiệu</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/posts/" title="📰 Blog">
+                <a href="https://lephuctron.github.io/Blog/huagu/posts/" title="📰 Blog">
                     <span>📰 Blog</span>
                 </a>
             </li>
@@ -258,17 +328,17 @@ Việc hiểu và sử dụng WebSocket trong JavaScript sẽ giúp em phát tri
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/javascript/">JavaScript</a></li>
-      <li><a href="http://localhost:1313/tags/websocket/">WebSocket</a></li>
-      <li><a href="http://localhost:1313/tags/realtime/">Realtime</a></li>
-      <li><a href="http://localhost:1313/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/">Lập Trình Mạng</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/javascript/">JavaScript</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/websocket/">WebSocket</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/realtime/">Realtime</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/">Lập Trình Mạng</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">My New Hugo Site</a></span> · 
+        <span>&copy; 2025 <a href="https://lephuctron.github.io/Blog/huagu/">My New Hugo Site</a></span> · 
 
     <span>
         Powered by

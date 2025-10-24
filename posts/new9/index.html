@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Tạo API đơn giản bằng Node.js và Express | My New Hugo Site</title>
 <meta name="keywords" content="Node.js, Express, REST API, Lập trình mạng">
 <meta name="description" content="Hướng dẫn tạo REST API cơ bản bằng Node.js và Express để xử lý dữ liệu người dùng.">
 <meta name="author" content="Lê Mai Hoàng Phúc">
-<link rel="canonical" href="http://localhost:1313/posts/new9/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.a482bf00fa5c046040ef7973ad5fdf5657890cacb596c93f1382f664ca542074.css" integrity="sha256-pIK/APpcBGBA73lzrV/fVleJDKy1lsk/E4L2ZMpUIHQ=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="canonical" href="https://lephuctron.github.io/Blog/huagu/posts/new9/">
+<link crossorigin="anonymous" href="/Blog/huagu/assets/css/stylesheet.a482bf00fa5c046040ef7973ad5fdf5657890cacb596c93f1382f664ca542074.css" integrity="sha256-pIK/APpcBGBA73lzrV/fVleJDKy1lsk/E4L2ZMpUIHQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://lephuctron.github.io/Blog/huagu/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://lephuctron.github.io/Blog/huagu/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://lephuctron.github.io/Blog/huagu/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://lephuctron.github.io/Blog/huagu/apple-touch-icon.png">
+<link rel="mask-icon" href="https://lephuctron.github.io/Blog/huagu/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/new9/">
+<link rel="alternate" hreflang="en" href="https://lephuctron.github.io/Blog/huagu/posts/new9/">
 <noscript>
     <style>
         #theme-toggle,
@@ -55,7 +55,77 @@
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:url" content="https://lephuctron.github.io/Blog/huagu/posts/new9/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="Tạo API đơn giản bằng Node.js và Express">
+  <meta property="og:description" content="Hướng dẫn tạo REST API cơ bản bằng Node.js và Express để xử lý dữ liệu người dùng.">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-24T00:00:00+00:00">
+    <meta property="article:tag" content="Node.js">
+    <meta property="article:tag" content="Express">
+    <meta property="article:tag" content="REST API">
+    <meta property="article:tag" content="Lập Trình Mạng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tạo API đơn giản bằng Node.js và Express">
+<meta name="twitter:description" content="Hướng dẫn tạo REST API cơ bản bằng Node.js và Express để xử lý dữ liệu người dùng.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://lephuctron.github.io/Blog/huagu/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Tạo API đơn giản bằng Node.js và Express",
+      "item": "https://lephuctron.github.io/Blog/huagu/posts/new9/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Tạo API đơn giản bằng Node.js và Express",
+  "name": "Tạo API đơn giản bằng Node.js và Express",
+  "description": "Hướng dẫn tạo REST API cơ bản bằng Node.js và Express để xử lý dữ liệu người dùng.",
+  "keywords": [
+    "Node.js", "Express", "REST API", "Lập trình mạng"
+  ],
+  "articleBody": "🌐 Tạo API đơn giản bằng Node.js và Express 🔍 REST API là gì? REST API (Representational State Transfer) là giao diện lập trình cho phép client (trình duyệt, ứng dụng) giao tiếp với server thông qua các phương thức HTTP như GET, POST, PUT, DELETE.\nĐây là nền tảng của hầu hết các ứng dụng web và di động hiện đại.\n🎯 Mục tiêu bài viết Tạo một API đơn giản để quản lý danh sách người dùng với hai chức năng:\n✅ Lấy danh sách người dùng ✅ Thêm người dùng mới 🧩 Bước 1: Khởi tạo dự án Node.js Tạo thư mục mới và cài đặt Express:\nmkdir SimpleAPI \u0026\u0026 cd SimpleAPI npm init -y npm install express touch index.js 🧠 Bước 2: Viết mã API trong index.js const express = require(\"express\"); const app = express(); app.use(express.json()); // Dữ liệu mẫu let users = [ { id: 1, name: \"Phúc\" }, { id: 2, name: \"Mai\" } ]; // 📍 GET: Lấy danh sách người dùng app.get(\"/api/users\", (req, res) =\u003e { res.json(users); }); // 📍 POST: Thêm người dùng mới app.post(\"/api/users\", (req, res) =\u003e { const newUser = { id: users.length + 1, name: req.body.name }; users.push(newUser); res.json(newUser); }); const PORT = 3000; app.listen(PORT, () =\u003e console.log(`🚀 Server chạy tại cổng ${PORT}`)); 🧪 Bước 3: Kiểm tra API bằng Postman hoặc cURL 🔹 Lấy danh sách người dùng\nGET http://localhost:3000/api/users 🔹 Thêm người dùng mới\nPOST http://localhost:3000/api/users Content-Type: application/json { \"name\": \"Ngọc\" } Kết quả trả về:\n[ { \"id\": 1, \"name\": \"Phúc\" }, { \"id\": 2, \"name\": \"Mai\" }, { \"id\": 3, \"name\": \"Ngọc\" } ] 🧭 Kết luận Sau bài này, bạn đã biết cách:\n⚙️ Tạo server bằng Express 📡 Viết các route HTTP cơ bản 💾 Quản lý dữ liệu tạm thời bằng mảng 🔗 Giao tiếp giữa client và server Đây là nền tảng vững chắc để bạn phát triển các tính năng cao cấp hơn như:\nKết nối MongoDB / MySQL Thêm xác thực người dùng (JWT) Triển khai API lên cloud (Render, Vercel, hoặc Railway) 💡 Gợi ý tiếp theo: Ở bài sau, chúng ta sẽ học cách kết nối API này với frontend React để hiển thị danh sách người dùng và gửi dữ liệu trực tiếp từ trình duyệt.\n",
+  "wordCount" : "381",
+  "inLanguage": "en",
+  "datePublished": "2025-10-24T00:00:00Z",
+  "dateModified": "2025-10-24T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Lê Mai Hoàng Phúc"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lephuctron.github.io/Blog/huagu/posts/new9/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My New Hugo Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lephuctron.github.io/Blog/huagu/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -73,7 +143,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
+            <a href="https://lephuctron.github.io/Blog/huagu/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -99,17 +169,17 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/" title="🏠 Trang chủ">
+                <a href="https://lephuctron.github.io/Blog/huagu/" title="🏠 Trang chủ">
                     <span>🏠 Trang chủ</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/about/" title="👨‍💻 Giới thiệu">
+                <a href="https://lephuctron.github.io/Blog/huagu/about/" title="👨‍💻 Giới thiệu">
                     <span>👨‍💻 Giới thiệu</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/posts/" title="📰 Blog">
+                <a href="https://lephuctron.github.io/Blog/huagu/posts/" title="📰 Blog">
                     <span>📰 Blog</span>
                 </a>
             </li>
@@ -219,17 +289,17 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/node.js/">Node.js</a></li>
-      <li><a href="http://localhost:1313/tags/express/">Express</a></li>
-      <li><a href="http://localhost:1313/tags/rest-api/">REST API</a></li>
-      <li><a href="http://localhost:1313/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/">Lập Trình Mạng</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/node.js/">Node.js</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/express/">Express</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/rest-api/">REST API</a></li>
+      <li><a href="https://lephuctron.github.io/Blog/huagu/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/">Lập Trình Mạng</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">My New Hugo Site</a></span> · 
+        <span>&copy; 2025 <a href="https://lephuctron.github.io/Blog/huagu/">My New Hugo Site</a></span> · 
 
     <span>
         Powered by
