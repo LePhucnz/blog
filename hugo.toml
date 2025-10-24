@@ -4,10 +4,6 @@ title = "Blog của Phúc"
 theme = "PaperMod"
 buildDrafts = true
 
-# ✅ Tắt fingerprinting để tránh lỗi integrity
-[params.assets]
-  disableFingerprinting = true
-
 [params]
   author = "Lê Mai Hoàng Phúc"
   description = "Chia sẻ kiến thức và kinh nghiệm lập trình Java & JavaScript"
@@ -17,18 +13,20 @@ buildDrafts = true
   show_toc = true
   show_share_buttons = true
   date_format = "02-01-2006"
-  defaultTheme = "auto"         # auto / light / dark
+  defaultTheme = "auto"
   disableScrollToTop = false
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
   ShowPostNavLinks = true
   ShowWordCount = true
   ShowRssButtonInSectionTermList = true
+  disableFingerprinting = true
 
-  homeInfoParams = { 
-    Title = "👋 Chào mừng đến với Blog của tôi!", 
-    Content = "Mình là Lê Mai Hoàng Phúc – sinh viên Công nghệ Thông tin. Blog này chia sẻ kiến thức về Java, JavaScript và lập trình mạng." 
-  }
+[params.homeInfoParams]
+Title = "👋 Chào mừng đến với Blog của tôi!"
+Content = "Mình là Lê Mai Hoàng Phúc – sinh viên Công nghệ Thông tin. Blog này chia sẻ kiến thức về Java, JavaScript và lập trình mạng."
+
+
 
   socialIcons = [
     { name = "github", url = "https://github.com/LePhucnz" },
@@ -36,16 +34,15 @@ buildDrafts = true
     { name = "email", url = "mailto:lhphuc0910@gmail.com" }
   ]
 
-  # ✅ Tìm kiếm nhanh
-  fuseOpts = { 
-    isCaseSensitive = false, 
-    shouldSort = true, 
-    location = 0, 
-    distance = 100, 
-    threshold = 0.4, 
-    minMatchCharLength = 2, 
-    keys = ["title", "summary", "content"] 
-  }
+[params.fuseOpts]
+isCaseSensitive = false
+shouldSort = true
+location = 0
+distance = 100
+threshold = 0.4
+minMatchCharLength = 2
+keys = ["title", "summary", "content"]
+
 
 [menu]
   [[menu.main]]
@@ -74,3 +71,9 @@ buildDrafts = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+  
+  [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
