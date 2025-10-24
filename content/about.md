@@ -9,7 +9,7 @@ draft = false
 Xin chào! Mình là **Lê Mai Hoàng Phúc** – sinh viên chuyên ngành **Công nghệ Thông tin**, đam mê lập trình và đặc biệt yêu thích **lĩnh vực lập trình mạng**.
 
 <div style="text-align: center;">
-<img src="/blog/images/cert/anhdaidien.png" alt="Giới thiệu về tôi" style="max-width: 100%;" />
+<img src="/images/cert/anhdaidien.png" alt="Giới thiệu về tôi" style="max-width: 100%;" />
 </div>
 
 Mình bắt đầu hành trình học lập trình với **Java** và **JavaScript** – hai ngôn ngữ cốt lõi giúp mình hiểu rõ hơn về:
@@ -36,7 +36,7 @@ Mục tiêu của blog là giúp bản thân **hệ thống hóa kiến thức**
 ## 🎓 Chứng chỉ Cisco
 
 <div style="text-align: center;">
-  <img src="/blog/images/cert/chungchi.png" alt="Chứng chỉ Cisco" style="max-width: 100%;" />
+  <img src="/images/cert/chungchi.png" alt="Chứng chỉ Cisco" style="max-width: 100%;" />
 </div>
 
 > 📌 *Ảnh chứng chỉ được xác minh trực tiếp từ Cisco Networking Academy thông qua nền tảng Credly.*
