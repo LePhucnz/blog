@@ -1,0 +1,35 @@
+baseURL = "https://lephucnz.github.io/blog-hugo/"
+languageCode = 'vi'
+title = 'My New Hugo Site'
+theme = "paperMod"
+
+buildDrafts = true
+
+[params]
+  author = "Lê Mai Hoàng Phúc"
+  description = "Chia sẻ kiến thức và kinh nghiệm lập trình Java & JavaScript"
+  featured_image = "images/tn.png" # ảnh có sẵn trong Ananke
+  mainSections = ["posts"]
+  show_reading_time = true
+  show_toc = true
+  show_share_buttons = true
+  date_format = "02-01-2006"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "🏠 Trang chủ"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "about"
+    name = "👨‍💻 Giới thiệu"
+    url = "/about/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "posts"
+    name = "📰 Blog"
+    url = "/posts/"
+    weight = 3
