@@ -2,73 +2,73 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on My New Hugo Site</title>
-    <link>https://lephuctron.github.io/Blog/huagu/posts/</link>
+    <link>https://lephucnz.github.io/blog-hugo/posts/</link>
     <description>Recent content in Posts on My New Hugo Site</description>
     <generator>Hugo -- 0.152.1</generator>
     <language>vi</language>
     <lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://lephuctron.github.io/Blog/huagu/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lephucnz.github.io/blog-hugo/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Giới thiệu giao thức HTTP và cách gửi yêu cầu bằng Java</title>
-      <link>https://lephuctron.github.io/Blog/huagu/posts/new6/</link>
+      <link>https://lephucnz.github.io/blog-hugo/posts/new6/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/posts/new6/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/posts/new6/</guid>
       <description>Tìm hiểu giao thức HTTP và cách gửi yêu cầu GET/POST bằng Java sử dụng HttpURLConnection.</description>
     </item>
     <item>
       <title>Giới thiệu về ngôn ngữ lập trình Java</title>
-      <link>https://lephuctron.github.io/Blog/huagu/posts/new/</link>
+      <link>https://lephucnz.github.io/blog-hugo/posts/new/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/posts/new/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/posts/new/</guid>
       <description>Tìm hiểu tổng quan về Java – ngôn ngữ lập trình mạnh mẽ, hướng đối tượng và đa nền tảng.</description>
     </item>
     <item>
       <title>Kết nối React với API Node.js</title>
-      <link>https://lephuctron.github.io/Blog/huagu/posts/new7/</link>
+      <link>https://lephucnz.github.io/blog-hugo/posts/new7/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/posts/new7/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/posts/new7/</guid>
       <description>Hướng dẫn cách kết nối frontend React với backend Node.js thông qua REST API để hiển thị dữ liệu cổ phiếu.</description>
     </item>
     <item>
       <title>REST API là gì? Cách xây dựng với Spring Boot</title>
-      <link>https://lephuctron.github.io/Blog/huagu/posts/new3/</link>
+      <link>https://lephucnz.github.io/blog-hugo/posts/new3/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/posts/new3/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/posts/new3/</guid>
       <description>Giới thiệu chi tiết về RESTful API và hướng dẫn từng bước xây dựng API với Spring Boot trong Java.</description>
     </item>
     <item>
       <title>So sánh TCP và UDP trong lập trình mạng</title>
-      <link>https://lephuctron.github.io/Blog/huagu/posts/new5/</link>
+      <link>https://lephucnz.github.io/blog-hugo/posts/new5/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/posts/new5/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/posts/new5/</guid>
       <description>Phân biệt TCP và UDP, hai giao thức truyền tải phổ biến trong lập trình mạng, kèm ví dụ minh họa bằng Java.</description>
     </item>
     <item>
       <title>Tạo API đơn giản bằng Node.js và Express</title>
-      <link>https://lephuctron.github.io/Blog/huagu/posts/new9/</link>
+      <link>https://lephucnz.github.io/blog-hugo/posts/new9/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/posts/new9/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/posts/new9/</guid>
       <description>Hướng dẫn tạo REST API cơ bản bằng Node.js và Express để xử lý dữ liệu người dùng.</description>
     </item>
     <item>
       <title>Tạo ứng dụng chat đơn giản bằng Java Socket</title>
-      <link>https://lephuctron.github.io/Blog/huagu/posts/new2/</link>
+      <link>https://lephucnz.github.io/blog-hugo/posts/new2/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/posts/new2/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/posts/new2/</guid>
       <description>Hướng dẫn xây dựng ứng dụng chat cơ bản giữa client và server bằng Java Socket, giúp hiểu rõ cách giao tiếp qua giao thức TCP.</description>
     </item>
     <item>
       <title>WebSocket trong JavaScript: Giao tiếp thời gian thực</title>
-      <link>https://lephuctron.github.io/Blog/huagu/posts/new4/</link>
+      <link>https://lephucnz.github.io/blog-hugo/posts/new4/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/posts/new4/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/posts/new4/</guid>
       <description>Tìm hiểu cách sử dụng WebSocket trong JavaScript để xây dựng ứng dụng giao tiếp thời gian thực giữa client và server.</description>
     </item>
     <item>
       <title>Xác thực người dùng bằng JWT trong Node.js</title>
-      <link>https://lephuctron.github.io/Blog/huagu/posts/new8/</link>
+      <link>https://lephucnz.github.io/blog-hugo/posts/new8/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/posts/new8/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/posts/new8/</guid>
       <description>Hướng dẫn cách xác thực người dùng bằng JSON Web Token (JWT) trong ứng dụng Node.js sử dụng Express.</description>
     </item>
   </channel>

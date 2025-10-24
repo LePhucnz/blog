@@ -2,178 +2,178 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on My New Hugo Site</title>
-    <link>https://lephuctron.github.io/Blog/huagu/tags/</link>
+    <link>https://lephucnz.github.io/blog-hugo/tags/</link>
     <description>Recent content in Tags on My New Hugo Site</description>
     <generator>Hugo -- 0.152.1</generator>
     <language>vi</language>
     <lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://lephuctron.github.io/Blog/huagu/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lephucnz.github.io/blog-hugo/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Backend</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/backend/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/backend/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/backend/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/backend/</guid>
       <description></description>
     </item>
     <item>
       <title>Bảo Mật</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/b%E1%BA%A3o-m%E1%BA%ADt/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/b%E1%BA%A3o-m%E1%BA%ADt/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/b%E1%BA%A3o-m%E1%BA%ADt/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/b%E1%BA%A3o-m%E1%BA%ADt/</guid>
       <description></description>
     </item>
     <item>
       <title>Client-Server</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/client-server/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/client-server/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/client-server/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/client-server/</guid>
       <description></description>
     </item>
     <item>
       <title>Công Nghệ Phần Mềm</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/c%C3%B4ng-ngh%E1%BB%87-ph%E1%BA%A7n-m%E1%BB%81m/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/c%C3%B4ng-ngh%E1%BB%87-ph%E1%BA%A7n-m%E1%BB%81m/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/c%C3%B4ng-ngh%E1%BB%87-ph%E1%BA%A7n-m%E1%BB%81m/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/c%C3%B4ng-ngh%E1%BB%87-ph%E1%BA%A7n-m%E1%BB%81m/</guid>
       <description></description>
     </item>
     <item>
       <title>Express</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/express/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/express/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/express/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/express/</guid>
       <description></description>
     </item>
     <item>
       <title>Frontend</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/frontend/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/frontend/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/frontend/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/frontend/</guid>
       <description></description>
     </item>
     <item>
       <title>HTTP</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/http/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/http/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/http/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/http/</guid>
       <description></description>
     </item>
     <item>
       <title>HttpURLConnection</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/httpurlconnection/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/httpurlconnection/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/httpurlconnection/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/httpurlconnection/</guid>
       <description></description>
     </item>
     <item>
       <title>Java</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/java/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/java/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/java/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/java/</guid>
       <description></description>
     </item>
     <item>
       <title>JavaScript</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/javascript/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/javascript/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/javascript/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>JWT</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/jwt/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/jwt/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/jwt/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/jwt/</guid>
       <description></description>
     </item>
     <item>
       <title>Lập Trình Hướng Đối Tượng</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/l%E1%BA%ADp-tr%C3%ACnh-h%C6%B0%E1%BB%9Bng-%C4%91%E1%BB%91i-t%C6%B0%E1%BB%A3ng/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/l%E1%BA%ADp-tr%C3%ACnh-h%C6%B0%E1%BB%9Bng-%C4%91%E1%BB%91i-t%C6%B0%E1%BB%A3ng/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/l%E1%BA%ADp-tr%C3%ACnh-h%C6%B0%E1%BB%9Bng-%C4%91%E1%BB%91i-t%C6%B0%E1%BB%A3ng/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/l%E1%BA%ADp-tr%C3%ACnh-h%C6%B0%E1%BB%9Bng-%C4%91%E1%BB%91i-t%C6%B0%E1%BB%A3ng/</guid>
       <description></description>
     </item>
     <item>
       <title>Lập Trình Mạng</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/</guid>
       <description></description>
     </item>
     <item>
       <title>Node.js</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/node.js/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/node.js/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/node.js/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/node.js/</guid>
       <description></description>
     </item>
     <item>
       <title>React</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/react/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/react/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/react/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/react/</guid>
       <description></description>
     </item>
     <item>
       <title>Realtime</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/realtime/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/realtime/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/realtime/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/realtime/</guid>
       <description></description>
     </item>
     <item>
       <title>REST API</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/rest-api/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/rest-api/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/rest-api/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/rest-api/</guid>
       <description></description>
     </item>
     <item>
       <title>Socket</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/socket/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/socket/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/socket/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/socket/</guid>
       <description></description>
     </item>
     <item>
       <title>Spring Boot</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/spring-boot/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/spring-boot/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/spring-boot/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/spring-boot/</guid>
       <description></description>
     </item>
     <item>
       <title>TCP</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/tcp/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/tcp/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/tcp/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/tcp/</guid>
       <description></description>
     </item>
     <item>
       <title>UDP</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/udp/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/udp/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/udp/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/udp/</guid>
       <description></description>
     </item>
     <item>
       <title>Ứng Dụng Mạng</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/%E1%BB%A9ng-d%E1%BB%A5ng-m%E1%BA%A1ng/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/%E1%BB%A9ng-d%E1%BB%A5ng-m%E1%BA%A1ng/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/%E1%BB%A9ng-d%E1%BB%A5ng-m%E1%BA%A1ng/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/%E1%BB%A9ng-d%E1%BB%A5ng-m%E1%BA%A1ng/</guid>
       <description></description>
     </item>
     <item>
       <title>WebSocket</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/websocket/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/websocket/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/websocket/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/websocket/</guid>
       <description></description>
     </item>
     <item>
       <title>Xác Thực</title>
-      <link>https://lephuctron.github.io/Blog/huagu/tags/x%C3%A1c-th%E1%BB%B1c/</link>
+      <link>https://lephucnz.github.io/blog-hugo/tags/x%C3%A1c-th%E1%BB%B1c/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://lephuctron.github.io/Blog/huagu/tags/x%C3%A1c-th%E1%BB%B1c/</guid>
+      <guid>https://lephucnz.github.io/blog-hugo/tags/x%C3%A1c-th%E1%BB%B1c/</guid>
       <description></description>
     </item>
   </channel>
