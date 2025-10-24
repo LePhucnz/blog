@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Kết nối React với API Node.js | My New Hugo Site</title>
+<meta name="keywords" content="React, Node.js, REST API, Frontend, Backend">
+<meta name="description" content="Hướng dẫn cách kết nối frontend React với backend Node.js thông qua REST API để hiển thị dữ liệu cổ phiếu.">
+<meta name="author" content="Lê Mai Hoàng Phúc">
+<link rel="canonical" href="http://localhost:1313/posts/new7/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a482bf00fa5c046040ef7973ad5fdf5657890cacb596c93f1382f664ca542074.css" integrity="sha256-pIK/APpcBGBA73lzrV/fVleJDKy1lsk/E4L2ZMpUIHQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/new7/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="🏠 Trang chủ">
+                    <span>🏠 Trang chủ</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="👨‍💻 Giới thiệu">
+                    <span>👨‍💻 Giới thiệu</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="📰 Blog">
+                    <span>📰 Blog</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Kết nối React với API Node.js
+    </h1>
+    <div class="post-description">
+      Hướng dẫn cách kết nối frontend React với backend Node.js thông qua REST API để hiển thị dữ liệu cổ phiếu.
+    </div>
+    <div class="post-meta"><span title='2025-10-24 00:00:00 +0000 UTC'>October 24, 2025</span>&nbsp;·&nbsp;<span>Lê Mai Hoàng Phúc</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="-mục-tiêu-bài-viết">🌐 Mục tiêu bài viết<a hidden class="anchor" aria-hidden="true" href="#-mục-tiêu-bài-viết">#</a></h2>
+<p>Sau khi đã xây dựng xong backend bằng Node.js và MongoDB (bài 6), bài này sẽ hướng dẫn cách kết nối <strong>React frontend</strong> với API đó để hiển thị danh sách cổ phiếu và thêm mới cổ phiếu từ giao diện người dùng.</p>
+<hr>
+<h2 id="-cấu-trúc-dự-án">🧩 Cấu trúc dự án<a hidden class="anchor" aria-hidden="true" href="#-cấu-trúc-dự-án">#</a></h2>
+<pre tabindex="0"><code>portfolio-app/
+├── backend/        // API Node.js đã hoàn thành ở bài trước
+└── frontend/       // React app sẽ tạo trong bài này
+</code></pre><hr>
+<h2 id="-step-1-tạo-ứng-dụng-react">📝 Step 1: Tạo ứng dụng React<a hidden class="anchor" aria-hidden="true" href="#-step-1-tạo-ứng-dụng-react">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx create-react-app frontend
+</span></span><span style="display:flex;"><span>cd frontend
+</span></span><span style="display:flex;"><span>npm install axios
+</span></span></code></pre></div><hr>
+<h2 id="-step-2-tạo-component-hiển-thị-danh-sách-cổ-phiếu">📝 Step 2: Tạo component hiển thị danh sách cổ phiếu<a hidden class="anchor" aria-hidden="true" href="#-step-2-tạo-component-hiển-thị-danh-sách-cổ-phiếu">#</a></h2>
+<p><strong>src/components/StockList.js</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span>, { <span style="color:#a6e22e">useEffect</span>, <span style="color:#a6e22e">useState</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;axios&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">StockList</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">stocks</span>, <span style="color:#a6e22e">setStocks</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>([]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useEffect</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;http://localhost:5000/api/stocks&#34;</span>)
+</span></span><span style="display:flex;"><span>      .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; <span style="color:#a6e22e">setStocks</span>(<span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>))
+</span></span><span style="display:flex;"><span>      .<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">err</span> =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">err</span>));
+</span></span><span style="display:flex;"><span>  }, []);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h2</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Danh</span> <span style="color:#a6e22e">sách</span> <span style="color:#a6e22e">cổ</span> <span style="color:#a6e22e">phiếu</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h2&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ul</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        {<span style="color:#a6e22e">stocks</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">stock</span> =&gt; (
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">stock</span>.<span style="color:#a6e22e">_id</span>}<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            {<span style="color:#a6e22e">stock</span>.<span style="color:#a6e22e">symbol</span>} <span style="color:#f92672">-</span> {<span style="color:#a6e22e">stock</span>.<span style="color:#a6e22e">shares</span>} <span style="color:#a6e22e">cổ</span> <span style="color:#a6e22e">phiếu</span> <span style="color:#960050;background-color:#1e0010">@</span> {<span style="color:#a6e22e">stock</span>.<span style="color:#a6e22e">purchasePrice</span>}<span style="color:#a6e22e">$</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/li&gt;</span>
+</span></span><span style="display:flex;"><span>        ))}
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/ul&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">StockList</span>;
+</span></span></code></pre></div><hr>
+<h2 id="-step-3-tạo-form-thêm-cổ-phiếu-mới">📝 Step 3: Tạo form thêm cổ phiếu mới<a hidden class="anchor" aria-hidden="true" href="#-step-3-tạo-form-thêm-cổ-phiếu-mới">#</a></h2>
+<p><strong>src/components/AddStock.js</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span>, { <span style="color:#a6e22e">useState</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;axios&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">AddStock</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">form</span>, <span style="color:#a6e22e">setForm</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">symbol</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">shares</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">purchasePrice</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handleChange</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span> =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setForm</span>({ ...<span style="color:#a6e22e">form</span>, [<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">name</span>]<span style="color:#f92672">:</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">value</span> });
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handleSubmit</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span> =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">preventDefault</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#34;http://localhost:5000/api/stocks&#34;</span>, <span style="color:#a6e22e">form</span>)
+</span></span><span style="display:flex;"><span>      .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Thêm thành công!&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">setForm</span>({ <span style="color:#a6e22e">symbol</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#a6e22e">shares</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#a6e22e">purchasePrice</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span> });
+</span></span><span style="display:flex;"><span>      })
+</span></span><span style="display:flex;"><span>      .<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">err</span> =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">err</span>));
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">form</span> <span style="color:#a6e22e">onSubmit</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">handleSubmit</span>}<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h2</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Thêm</span> <span style="color:#a6e22e">cổ</span> <span style="color:#a6e22e">phiếu</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h2&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;symbol&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">form</span>.<span style="color:#a6e22e">symbol</span>} <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">handleChange</span>} <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Mã cổ phiếu&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;shares&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">form</span>.<span style="color:#a6e22e">shares</span>} <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">handleChange</span>} <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Số lượng&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;purchasePrice&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">form</span>.<span style="color:#a6e22e">purchasePrice</span>} <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">handleChange</span>} <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Giá mua&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Thêm</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/form&gt;</span>
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">AddStock</span>;
+</span></span></code></pre></div><hr>
+<h2 id="-step-4-sử-dụng-các-component-trong-appjs">📝 Step 4: Sử dụng các component trong App.js<a hidden class="anchor" aria-hidden="true" href="#-step-4-sử-dụng-các-component-trong-appjs">#</a></h2>
+<p><strong>src/App.js</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">StockList</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./components/StockList&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">AddStock</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./components/AddStock&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">App</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Quản</span> <span style="color:#a6e22e">lý</span> <span style="color:#a6e22e">danh</span> <span style="color:#a6e22e">mục</span> <span style="color:#a6e22e">đầu</span> <span style="color:#a6e22e">tư</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">AddStock</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">StockList</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">App</span>;
+</span></span></code></pre></div><hr>
+<h2 id="-step-5-cho-phép-cors-từ-frontend">📝 Step 5: Cho phép CORS từ frontend<a hidden class="anchor" aria-hidden="true" href="#-step-5-cho-phép-cors-từ-frontend">#</a></h2>
+<p>Trong file <strong>backend/index.js</strong>, đảm bảo đã có:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">cors</span>());
+</span></span></code></pre></div><hr>
+<h2 id="-kết-quả">🚀 Kết quả<a hidden class="anchor" aria-hidden="true" href="#-kết-quả">#</a></h2>
+<p>Khi chạy cả <strong>backend</strong> và <strong>frontend</strong>:</p>
+<ul>
+<li>Người dùng có thể nhập thông tin cổ phiếu và gửi lên server</li>
+<li>Dữ liệu sẽ được lưu vào <strong>MongoDB</strong></li>
+<li>Danh sách cổ phiếu sẽ được hiển thị ngay trên giao diện React</li>
+</ul>
+<hr>
+<h2 id="-kết-luận">📌 Kết luận<a hidden class="anchor" aria-hidden="true" href="#-kết-luận">#</a></h2>
+<p>Việc kết nối <strong>React</strong> với <strong>Node.js</strong> thông qua <strong>REST API</strong> là bước quan trọng để xây dựng ứng dụng web hoàn chỉnh. Sau bài này, em có thể:</p>
+<ul>
+<li>Thêm chức năng <strong>sửa và xóa cổ phiếu</strong></li>
+<li>Hiển thị <strong>biểu đồ đầu tư</strong> bằng thư viện <strong>Chart.js</strong></li>
+<li>Tích hợp <strong>xác thực người dùng</strong> bằng <strong>JWT</strong></li>
+<li>Deploy cả <strong>frontend</strong> và <strong>backend</strong> lên <strong>Vercel</strong>, <strong>Render</strong>, hoặc <strong>Railway</strong></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/react/">React</a></li>
+      <li><a href="http://localhost:1313/tags/node.js/">Node.js</a></li>
+      <li><a href="http://localhost:1313/tags/rest-api/">REST API</a></li>
+      <li><a href="http://localhost:1313/tags/frontend/">Frontend</a></li>
+      <li><a href="http://localhost:1313/tags/backend/">Backend</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">My New Hugo Site</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

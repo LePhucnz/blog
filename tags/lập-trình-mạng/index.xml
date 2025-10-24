@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Lập Trình Mạng on My New Hugo Site</title>
+    <link>http://localhost:1313/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/</link>
+    <description>Recent content in Lập Trình Mạng on My New Hugo Site</description>
+    <generator>Hugo -- 0.152.1</generator>
+    <language>vi</language>
+    <lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Giới thiệu giao thức HTTP và cách gửi yêu cầu bằng Java</title>
+      <link>http://localhost:1313/posts/new6/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/new6/</guid>
+      <description>Tìm hiểu giao thức HTTP và cách gửi yêu cầu GET/POST bằng Java sử dụng HttpURLConnection.</description>
+    </item>
+    <item>
+      <title>REST API là gì? Cách xây dựng với Spring Boot</title>
+      <link>http://localhost:1313/posts/new3/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/new3/</guid>
+      <description>Giới thiệu chi tiết về RESTful API và hướng dẫn từng bước xây dựng API với Spring Boot trong Java.</description>
+    </item>
+    <item>
+      <title>So sánh TCP và UDP trong lập trình mạng</title>
+      <link>http://localhost:1313/posts/new5/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/new5/</guid>
+      <description>Phân biệt TCP và UDP, hai giao thức truyền tải phổ biến trong lập trình mạng, kèm ví dụ minh họa bằng Java.</description>
+    </item>
+    <item>
+      <title>Tạo API đơn giản bằng Node.js và Express</title>
+      <link>http://localhost:1313/posts/new9/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/new9/</guid>
+      <description>Hướng dẫn tạo REST API cơ bản bằng Node.js và Express để xử lý dữ liệu người dùng.</description>
+    </item>
+    <item>
+      <title>WebSocket trong JavaScript: Giao tiếp thời gian thực</title>
+      <link>http://localhost:1313/posts/new4/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/new4/</guid>
+      <description>Tìm hiểu cách sử dụng WebSocket trong JavaScript để xây dựng ứng dụng giao tiếp thời gian thực giữa client và server.</description>
+    </item>
+  </channel>
+</rss>
